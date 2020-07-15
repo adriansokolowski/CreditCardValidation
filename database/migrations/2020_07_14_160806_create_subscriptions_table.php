@@ -26,6 +26,10 @@ class CreateSubscriptionsTable extends Migration
             $table->dateTime('created_at', 0)->nullable();	
             $table->dateTime('updated_at', 0);	
 
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
 
         DB::table('subscriptions')->insert(

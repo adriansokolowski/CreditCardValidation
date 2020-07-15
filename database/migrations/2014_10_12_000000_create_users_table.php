@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('subscription_id')
+                ->references('id')
+                ->on('subscriptions')
+                ->onDelete('cascade');
         });
     }
 

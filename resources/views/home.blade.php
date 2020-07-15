@@ -14,8 +14,10 @@
                         </div>
                     @endif
                     Cześć, {{ Auth::user()->name }}
-                    Twoja subskrybcja została wykupiona w: 
-                    {{ Auth::user()->subscription->updated_at }}
+                    @if (Auth::user()->subscription)
+                        Twoja subskrybcja została wykupiona w: 
+                        {{ Auth::user()->subscription->updated_at }}
+                    @endif
                 </div>
             </div>
         </div>
