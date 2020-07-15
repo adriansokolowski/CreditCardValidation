@@ -30,9 +30,7 @@ class Visa implements Rule
             return true;
         } else {
             return false;
-        }
-        //return strtoupper($value) === $value;
-        
+        }        
     }
 
     /**
