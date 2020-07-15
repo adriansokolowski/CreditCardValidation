@@ -21,6 +21,11 @@ class CreatePaymentsTable extends Migration
             $table->date('date', 0);
             $table->dateTime('updated_at', 0)->nullable();	
             $table->dateTime('created_at', 0);	
+            
+            $table->foreign('subscription_id')
+                ->references('id')
+                ->on('subscriptions')
+                ->onDelete('cascade');
         });
 
         DB::table('payments')->insert(
