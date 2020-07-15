@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/subscriptions', 'SubscriptionsController@index')->name('subscriptions.index');
 Route::get('/subscriptions/create', 'SubscriptionsController@create');
 Route::post('/subscriptions', 'SubscriptionsController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
